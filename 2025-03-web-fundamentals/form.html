@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+    <form id="simpleForm" onsubmit="return submitForm();">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <!-- <button type="button" onclick="submitForm()">Submit</button> -->
+         <!-- below is a modification of button for preventing the default form submission behavior -->
+        <button type="subimt">Submit</button>
+    </form>
+    
+    <script>
+        function submitForm() {
+            let username = document.getElementById('username').value;
+            alert('Hello, ' + username + '!');
+            return false; // prevent the form from submitting
+        }
+    </script>
+
+
+
+</body>
+</html>

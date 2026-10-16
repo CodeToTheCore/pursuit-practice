@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+</head>
+<body>
+    <h1 id="header">Welcome to My Home Page</h1>
+    <p>This is a paragraph of text.</p>
+    <ul id="myList">
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">First item</li>
+        <li onmouseover="highlight(this)" onmouseout="unhighlight(this)">Second item</li>
+    </ul>
+    <input type="text" id="inputField" placeholder="type here and press Enter">
+    <!-- <button onclick="addItem()">Add Item</button> -->
+     <button id="addItemButton">Add Item</button>
+    <!-- <button onclick="changeText()">Change Header</button> -->
+     <button id="changeTextButton">Change Header</button>
+    <!-- <button onclick="removeItem()">Remove Last Item</button> -->
+     <button id="removeItemButton">Remove Last Item</button>
+    <button id="myButton">Click me!</button>
+
+    <script>
+        document.getElementById('inputField').addEventListener('keydown', function(event){
+            if (event.key === 'Enter') {
+                let newItem = document.createElement('li');
+                newItem.textContent = this.value; // uses the input field's current value for the item's text.
+                let list = document.getElementById('myList');
+                list.appendChild(newItem);
+                this.value = ""; //clear the input field
+            }
+        });
+
+         function highlight(element) {
+            element.style.backgroundColor = "yellow";
+         }
+
+         function unhighlight(element) {
+            element.style.backgroundColor = 'white';
+         }
+        // First, we need to select the button element from the HTML.
+        // Then, we add an event listener to that button.
+        // We specify the type of event to listen for, which is "click" in this case.
+        // We also provide a function that will be called when the event occurs.
+        //  let button = document.getElementById('myButton');
+        //  button.addEventListener('click', function(){
+        //     alert('Button was clicked');
+
+            myButton.addEventListener('click', function(event){
+            console.log(event.type);
+            alert('Button was clicked!');
+        });
+        //  });
+        // modified version
+        
+
+        // function addItem() {
+            document.getElementById('addItemButton').addEventListener('click', function(){
+            // Create a new <li> element
+        let newItem = document.createElement('li');
+        // Set the text content for the new element
+        newItem.textContent = 'New item';  
+        
+        // Get the <ul> element to which we want to add the new <li>
+            let list = document.getElementById('myList');
+            // Append the new <li> to the <ul>
+                list.appendChild(newItem);
+            })
+        // };
+
+        //  function changeText() {
+        document.getElementById('changeTextButton').addEventListener('click', function() {
+            document.getElementById('header').innerText = 'Header Changed!'
+        });
+    // };
+        //  function removeItem () {
+        document.getElementById('removeItemButton').addEventListener('click', function() {
+            let list = document.getElementById('myList');
+            let lastItem = list.lastElementChild;
+            list.removeChild(lastItem);
+        });
+    // };
+    </script>
+    
+</body>
+</html>

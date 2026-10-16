@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple AJAX Form</title>
+</head>
+<body>
+    <form id="simpleForm" onsubmit="return submitForm();">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function submitForm() {
+            let xhr = new XMLHttpRequest(); // create a new XMLHttpRequest object
+            let username = document.getElementById('username').value;
+
+            xhr.open("POST", "http://localhost:3000/submit", true); // Configure the request
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // Set the correct header for the data
+
+            xhr.onreadystatechange = function() {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    // Request finished. Do processing here.
+                    alert("Data sent successfully!");
+                }
+            }
+            xhr.send('username=' + encodeURIComponent(username)); // Send the request with the data
+              return false; // Prevent the form from submitting traditionally
+        }
+    </script>
+</body>
+</html>

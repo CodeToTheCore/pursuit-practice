@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px #888888;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        input[type="range"]{
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box; 
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+        background-color: #45a049;
+        } 
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Shopping list</h2>
+    <ul>
+        <li> Milk</li>
+        <li> Bread</li>
+        <li>Eggs</li>
+    </ul>
+    <h2>Steps to Bake a cake</h2>
+    <ol>
+        <li>Preheat the oven.</li>
+        <li>Mix ingredients.</li>
+        <li>bake for 25 minutes.</li>
+    </ol>
+    <form action="/submit_form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id= "name" name="name">
+
+        <label for="emal">Email</label>
+        <input type="'email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8">
+
+        <label for="color">Favorite Color:</label>
+        <select id="color" name="color" required>
+            <option value="">Select a color</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+        </select>
+
+        <label for="age">Age</label>
+        <input type="range" id="age" name="age" min="0" max="100" value="50" oninput="updateAgeValue(this.value)" required>
+        <script>
+            function updateAgeValue(value) {
+                document.getElementById('ageValue').textContent = value;
+            }
+        </script>
+
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+
+        <label for="agree">I agree to the terms and conditions</label>
+        <input type="checkbox" id="agree" name="agree" value="yes">
+    
+         <input type="'submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+body{
+    font-family: Arial, sans-serif; /* Sets the font of the text in the body */
+}
+
+h1 {
+    color: navy; /* Sets the color of h1 elements */
+    text-align: center; /* Centers h1 text */
+    
+   
+}
+
+p {
+    color: green; /* sets the color of the paragraph text */
+    font-size: 16px; /* Sets the size of the font*/
+   
+}
+
+.grid-container {
+    display:grid;
+     grid-template-columns:  200px 400px; 
+     /* grid-template-columns: 1fr 2fr 3fr;   */
+   /*  grid-template-columns: 25% 25% 25% 25%; */
+    /* grid-template-columns: repeat(4, 25%); */
+     grid-template-rows: 50px 50px 50px; 
+    /* grid-template-rows: 100px 150px ; */
+    /* padding: 20px; */
+    /* border: solid; */
+    grid-gap: 5px;
+    /* column-gap: 0%; */
+    }
+
+      .item1 {  
+        /* grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;*/
+       border: solid;
+       font-style:oblique;
+           /* grid-column: 1 / 5;  /* Start at line 1 and end at line 5, spanning all four columns */
+           /* grid-row: 2 / 3;     /* Start at line 2 and end at line 3, covering only the second row */
+        }
+
+        .item2{
+        border: solid;
+        }
+
+        .item3{
+            border: solid;
+            }
+
+        .item4{
+                border: solid;
+                }
+
+        
+       .item5{
+          border: solid;
+                 }
+
+       .item6{
+          border: solid;
+                    }
+    /*
+You can also use the shorthand properties grid-column and grid-row to define start and end points more concisely: */
+/*.item1 {
+  grid-column: 1 / 4;  /* Start at line 1 and end at line 4 */
+  /* grid-row: 1 / 2;     /* Start at line 1 and end at line 2 */
+/* }       */ 
