@@ -1,6 +1,6 @@
 # Pursuit Practice
 
-Smaller exercises from the Pursuit Fellowship, kept in one place and ordered by date. These are the reps behind my bigger projects. My full timeline is at https://codetothecore.github.io/developer-portfolio/
+Smaller exercises from the Pursuit Fellowship, kept in one place and ordered by date. These are the reps behind my bigger projects. My full timeline is at https://cornell-robertson.vercel.app
 
 | When | Folder | What I practiced |
 | --- | --- | --- |
